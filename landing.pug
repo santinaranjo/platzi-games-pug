@@ -1,5 +1,14 @@
 -var titulo = "Título principal"
 -var titulos = ["Titulo principal", "Subtitulo 1", "Subtitulo 2", "Subtitulo 3"]
+-var lorem = "Lorem, ipsum dolor sit amet consectetur adipisicing elit."
+
+mixin caja(imagen, titulo, contenido)
+	.caja 
+		.caja__imagen: img(src="./images/"+imagen)
+		.caja__contenido 
+			h3=titulo
+			p=contenido
+			a.boton Leer mas
 
 doctype html
 html(lang="es")
@@ -12,7 +21,10 @@ html(lang="es")
 	body 
 		header 
 			h1 PlatziGames 
-			a.boton Registro
+			if usuario 
+				a Hola #[usuario]
+			else 
+				a.boton Registro
 		section.intro
 			div.intro__image: img(src="./images/imagen.png")
 			.intro__contenido 
@@ -20,3 +32,7 @@ html(lang="es")
 				p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae iusto quibusdam quo nihil.
 					span Lorem, ipsum dolor sit amet consectetur adipisicing elit.
 				a.boton Leer mas
+		main.contenido 
+			+caja("imagen.png", titulos[1], lorem)
+			+caja("imagen.png", titulos[2], lorem)
+			+caja("imagen.png", titulos[3], lorem)
