@@ -1,30 +1,5 @@
--var titulo = "Título principal"
--var titulos = ["Titulo principal", "Subtitulo 1", "Subtitulo 2", "Subtitulo 3"]
--var lorem = "Lorem, ipsum dolor sit amet consectetur adipisicing elit."
-
-mixin caja(imagen, titulo, contenido)
-	.caja 
-		.caja__imagen: img(src="./images/"+imagen)
-		.caja__contenido 
-			h3=titulo
-			p=contenido
-			a.boton Leer mas
-
-doctype html
-html(lang="es")
-	head
-		meta(charset="UTF-8")
-		meta(http-equiv="X-UA-Compatible", content="IE=edge")
-		meta(name="viewport", content="width=device-width, initial-scale=1.0")
-		title PlatziGames
-		link(rel="stylesheet", href="./css/ejercicio-pug.css")
-	body 
-		header 
-			h1 PlatziGames 
-			if usuario 
-				a Hola #[usuario]
-			else 
-				a.boton Registro
+extend components/plantilla.pug
+block contenidos
 		section.intro
 			div.intro__image: img(src="./images/imagen.png")
 			.intro__contenido 
